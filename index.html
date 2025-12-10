@@ -1,182 +1,167 @@
 <!doctype html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Modern Card Portfolio — Md Jihadur Rahaman</title>
-  <!-- Tailwind via CDN for quick styling -->
+  <title>Md Jihadur Rahaman — Philosophical Writer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
+    body { font-size: 18px; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <!--
-    README / Usage notes (delete these comments after customization):
-    1) Rename this file to index.html and push to the root of a repository named: yourusername.github.io
-    2) In GitHub repo: Settings -> Pages -> deploy from main branch / root
-    3) Edit the content below (About, Contact, Posts). Replace placeholder text with your real data.
-    4) To add a new bilingual article: duplicate the .post-card and create matching anchors (#postN-bn and #postN-en) below.
-  -->
-
-  <header class="max-w-5xl mx-auto p-6 flex items-center justify-between">
+<body class="bg-black text-gray-100 min-h-screen">
+  
+  <!-- Header with Language Selector -->
+  <header class="max-w-6xl mx-auto p-8 flex items-center justify-between border-b border-gray-800">
     <div>
-      <h1 class="text-2xl font-extrabold">Md Jihadur Rahaman</h1>
-      <p class="text-sm text-slate-600"> Curious Learner • Visionary • Knowledge Seeker • Tech Enthusiast • Chess Player</p>
+      <h1 class="text-3xl font-bold text-white">Md Jihadur Rahaman</h1>
+      <p class="text-lg text-gray-400 mt-1">Philosophical Writer • Content Creator</p>
     </div>
-    <nav class="space-x-3">
-      <a class="text-sm text-slate-600 hover:text-slate-900" href="#about">About</a>
-      <a class="text-sm text-slate-600 hover:text-slate-900" href="#notes">Notes</a>
-      <a class="text-sm text-slate-600 hover:text-slate-900" href="#contact">Contact</a>
+    <nav class="flex items-center gap-6">
+      <a class="text-lg text-gray-300 hover:text-white transition" href="#about">About</a>
+      <a class="text-lg text-gray-300 hover:text-white transition" href="#work">Work</a>
+      <a class="text-lg text-gray-300 hover:text-white transition" href="#contact">Contact</a>
+      
+      <!-- Language Selector -->
+      <div class="relative">
+        <button id="langBtn" class="flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-gray-800 rounded-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+          </svg>
+          <span id="currentLang">English</span>
+        </button>
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-900 rounded-lg shadow-xl border border-gray-800 overflow-hidden z-50">
+          <button class="lang-option w-full text-left px-4 py-3 hover:bg-gray-800 transition" data-lang="en">🇬🇧 English</button>
+          <button class="lang-option w-full text-left px-4 py-3 hover:bg-gray-800 transition" data-lang="bn">🇧🇩 বাংলা</button>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 pb-20">
-    <!-- Hero / About -->
-  <section id="about" class="bg-white rounded-2xl shadow p-6 mb-8">
-  <div class="md:flex md:items-center md:gap-6">
-    <!-- Profile Image -->
-    <img src="profile.jpg" alt="profile" class="w-36 h-36 rounded-full object-cover shadow" />
-
-    <div>
-      <h2 class="text-xl font-bold">আবাউট — About</h2>
-
-      <!-- Bengali Bio -->
-      <p class="mt-2 text-slate-700">
-        আমি একজন মানুষ, যিনি নৈতিকতার মানদণ্ডে জীবনকে পরিমাপ করি। নতুন কিছু শেখার প্রতি আমার গভীর আগ্রহ থাকে, এবং শেখা জিনিসগুলোকে নিজের মধ্যে ধারণ করে নিজেকে আরও ভালোভাবে উপলব্ধি করতে চাই। মানুষের মধ্যে ভ্রাতৃত্ববোধ, সকল প্রাণীর প্রতি স্নেহ ও মমতা আমাকে গভীরভাবে আকৃষ্ট করে।  
-        আমার কাছে সকল ধর্ম সমানভাবে মূল্যবান। আমি বিশ্বাস করি, প্রতিটি ধর্ম নৈতিকতার ভিত্তিতে পরিচালিত হয়। কোনো ধর্মের অনুসারী হয়ে অন্য ধর্মের প্রতি ঘৃণা প্রদর্শন করা একেবারেই অনুচিত। সত্যিকারের মুক্তি, আমি মনে করি, আসে অসাম্প্রদায়িক সহমর্মিতা ও মানবিক বোঝাপড়ার মধ্য দিয়ে।  
-        আমি সর্বদা integrity বজায় রেখে জীবন যাপন করতে চাই, এবং নিজের ও পরিবারের জন্য নয়, বরং পৃথিবীর সকল মানুষের মঙ্গল কামনা করি। আমার জীবনযাত্রা হলো শেখা, বোঝা এবং পৃথিবীতে ইতিবাচক প্রভাব ফেলা।
-      </p>
-
-      <!-- English Bio -->
-      <p class="mt-2 text-slate-500 text-sm">
-        I am a person who measures life by the standards of morality. I have a deep interest in learning new things and strive to internalize them to better understand myself. I am profoundly drawn to fraternity among humans, and to kindness and compassion toward all living beings.  
-        I value all religions equally and believe that each religion is grounded in morality. It is inappropriate to hate another faith while following one. True liberation, I believe, comes through non-sectarian compassion and human understanding.  
-        I always seek to live life with integrity, wishing well not just for myself or my family, but for all humanity. My life’s path is to learn, to understand, and to make a positive impact on the world.
-      </p>
-    </div>
-  </div>
-</section>
-
-    <!-- Notes / Posts Grid -->
-    <section id="notes" class="mb-12">
-      <div class="flex items-center justify-between mb-4">
-        <h3 class="text-lg font-semibold">Philosophical Thought</h3>
-        <p class="text-sm text-slate-500">বাংলা + English • Modern card layout</p>
+  <main class="max-w-6xl mx-auto px-8 py-16">
+    
+    <!-- About Section -->
+    <section id="about" class="mb-20">
+      <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl p-10 border border-gray-800">
+        <div class="md:flex md:items-center md:gap-8">
+          <img src="profile.jpg" alt="profile" class="w-32 h-32 rounded-full object-cover shadow-lg ring-4 ring-gray-700" />
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4" data-en="About Me" data-bn="আমার সম্পর্কে">About Me</h2>
+            <p class="text-gray-300 leading-relaxed text-lg" data-en="I am a philosophical thinker and writer. I explore ideas through short reflective notes and essays. This site showcases my work, thoughts, and ways to connect with me." data-bn="আমি একজন দার্শনিক চিন্তাবিদ ও লেখক। ছোট ছোট চিন্তাশীল নোট এবং প্রবন্ধের মাধ্যমে ধারণাগুলো অন্বেষণ করি। এই সাইটে আমার কাজ, চিন্তাভাবনা এবং যোগাযোগের উপায় দেখানো হয়েছে।">
+              I am a philosophical thinker and writer. I explore ideas through short reflective notes and essays. This site showcases my work, thoughts, and ways to connect with me.
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Post Card (copy & duplicate for more posts) -->
-        <article class="post-card bg-white rounded-xl shadow p-5">
-          <header class="flex items-start justify-between">
-            <div>
-              <h4 class="font-bold text-lg">আত্মপরিচয়: একটি সংক্ষিপ্ত ধ্যান</h4>
-              <p class="text-sm text-slate-500 mt-1">A short reflection on identity.</p>
+    <!-- Work Section -->
+    <section id="work" class="mb-20">
+      <h2 class="text-3xl font-bold text-white mb-8" data-en="My Work" data-bn="আমার কাজ">My Work</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Philosophical Thoughts Card -->
+        <a href="thoughts.html" class="group block bg-gradient-to-br from-purple-900/30 to-gray-900 rounded-2xl p-8 border border-purple-800/50 hover:border-purple-600 transition-all duration-300 shadow-xl hover:shadow-purple-900/50 transform hover:-translate-y-1">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 bg-purple-600/20 rounded-xl flex items-center justify-center group-hover:bg-purple-600/30 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
             </div>
-            <div class="flex items-center gap-2">
-              <!-- Icon + english link to the english anchor below -->
-              <a href="#post1-en" class="flex items-center text-sm text-sky-600 hover:underline" title="Click to read in English">
-                <!-- globe icon (simple) -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.05 12H21.95" />
-                </svg>
-                Click to read in English
-              </a>
-            </div>
-          </header>
-
-          <div class="mt-3 text-slate-700">
-            <!-- Excerpt / short preview -->
-            <p>আমি যখন নিজের পরিচয় নিয়ে ভাবি, দেখতে পাই পরিচয় ছোট ছোট মুহূর্তের সমষ্টি। প্রতিটা সিদ্ধান্ত, প্রতিটা সম্পর্ক — এগুলোই একেকটা দিক গড়ে তোলে।</p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400 group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </div>
+          <h3 class="text-2xl font-bold text-white mb-3" data-en="Philosophical Thoughts" data-bn="দার্শনিক চিন্তা">Philosophical Thoughts</h3>
+          <p class="text-gray-400 text-lg leading-relaxed" data-en="A collection of my reflective essays and philosophical notes on identity, time, meaning, and the human experience." data-bn="পরিচয়, সময়, অর্থ এবং মানব অভিজ্ঞতার উপর আমার প্রতিফলিত প্রবন্ধ এবং দার্শনিক নোটের সংগ্রহ।">
+            A collection of my reflective essays and philosophical notes on identity, time, meaning, and the human experience.
+          </p>
+        </a>
 
-          <footer class="mt-4 flex items-center justify-between">
-            <div class="text-sm text-slate-500">Published • Dec 10, 2025</div>
-            <div>
-              <a href="#post1-bn" class="text-sm font-medium text-slate-700 hover:underline">Read in Bengali</a>
+        <!-- Placeholder for future content -->
+        <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-gray-800 opacity-60">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
             </div>
-          </footer>
-        </article>
-
-        <!-- Another sample post card (optional) -->
-        <article class="post-card bg-white rounded-xl shadow p-5">
-          <header class="flex items-start justify-between">
-            <div>
-              <h4 class="font-bold text-lg">সময়সূচি ও জীবন</h4>
-              <p class="text-sm text-slate-500 mt-1">Schedule and meaning.</p>
-            </div>
-            <div class="flex items-center gap-2">
-              <a href="#post2-en" class="flex items-center text-sm text-sky-600 hover:underline" title="Click to read in English">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.05 12H21.95" />
-                </svg>
-                Click to read in English
-              </a>
-            </div>
-          </header>
-          <div class="mt-3 text-slate-700">
-            <p>সময়কে আমরা সাধারণত একটি রিসোর্স মনে করি — কিন্তু সময়ের সঙ্গে আমাদের মানসিক মেলবন্ধন আলাদা একটি জগৎ তৈরি করে।</p>
           </div>
-          <footer class="mt-4 flex items-center justify-between">
-            <div class="text-sm text-slate-500">Published • Nov 25, 2025</div>
-            <div>
-              <a href="#post2-bn" class="text-sm font-medium text-slate-700 hover:underline">Read in Bengali</a>
-            </div>
-          </footer>
-        </article>
+          <h3 class="text-2xl font-bold text-gray-500 mb-3" data-en="More Coming Soon" data-bn="শীঘ্রই আরও আসছে">More Coming Soon</h3>
+          <p class="text-gray-600 text-lg" data-en="Stay tuned for more content and projects." data-bn="আরও বিষয়বস্তু এবং প্রকল্পের জন্য অপেক্ষা করুন।">
+            Stay tuned for more content and projects.
+          </p>
+        </div>
 
       </div>
     </section>
 
-    <!-- FULL POSTS SECTION (anchors) -->
-    <section class="space-y-12">
-      <!-- Post 1 - Bengali -->
-      <article id="post1-bn" class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold">আত্মপরিচয়: একটি সংক্ষিপ্ত ধ্যান (বাংলা)</h3>
-        <p class="mt-3 text-slate-700">আমি যখন নিজের পরিচয় নিয়ে ভাবি, দেখতে পাই পরিচয় ছোট ছোট মুহূর্তের সমষ্টি। প্রতিটা সিদ্ধান্ত, প্রতিটা সম্পর্ক — এগুলোই একেকটা দিক গড়ে তোলে।</p>
-        <p class="mt-3 text-slate-600 text-sm">(আরও পড়তে: নিচে ইংরেজি অনুবাদ আছে — অথবা উপরের "Click to read in English" ক্লিক করো)</p>
-      </article>
-
-      <!-- Post 1 - English (anchor target) -->
-      <article id="post1-en" class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold">Identity: A Short Reflection (English)</h3>
-        <p class="mt-3 text-slate-700">When I reflect on identity I see it as a collection of small moments. Every decision, every relation—these build the facets of who we are.</p>
-        <p class="mt-3 text-slate-500 text-sm">(Tip: Use the top card's "Read in English" link to jump directly here.)</p>
-      </article>
-
-      <!-- Post 2 - Bengali -->
-      <article id="post2-bn" class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold">সময়সূচি ও জীবন (বাংলা)</h3>
-        <p class="mt-3 text-slate-700">সময়কে আমরা সাধারণত একটি রিসোর্স মনে করি — কিন্তু সময়ের সঙ্গে আমাদের মানসিক মেলবন্ধন আলাদা একটি জগৎ তৈরি করে।</p>
-      </article>
-
-      <!-- Post 2 - English -->
-      <article id="post2-en" class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-bold">Schedule and Meaning (English)</h3>
-        <p class="mt-3 text-slate-700">We usually think of time as a resource — but our psychological relationship with time creates a different world.</p>
-      </article>
-
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="mt-12 bg-white p-6 rounded-xl shadow">
-      <h3 class="font-bold text-lg">Contact</h3>
-      <p class="mt-2 text-slate-700">Email: <a href="mailto:youremail@example.com" class="text-sky-600">youremail@example.com</a></p>
-      <p class="mt-1 text-slate-700">LinkedIn: <a href="#" class="text-sky-600">your profile</a></p>
-      <p class="mt-1 text-slate-700">GitHub: <a href="#" class="text-sky-600">github.com/yourusername</a></p>
+    <!-- Contact Section -->
+    <section id="contact" class="mb-20">
+      <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-10 border border-gray-800 shadow-2xl">
+        <h2 class="text-3xl font-bold text-white mb-6" data-en="Get in Touch" data-bn="যোগাযোগ করুন">Get in Touch</h2>
+        <div class="space-y-4 text-lg">
+          <p class="text-gray-300">
+            <span class="text-gray-500" data-en="Email:" data-bn="ইমেইল:">Email:</span> 
+            <a href="mailto:youremail@example.com" class="text-purple-400 hover:text-purple-300 ml-2">youremail@example.com</a>
+          </p>
+          <p class="text-gray-300">
+            <span class="text-gray-500" data-en="LinkedIn:" data-bn="লিংকডইন:">LinkedIn:</span> 
+            <a href="#" class="text-purple-400 hover:text-purple-300 ml-2">your-profile</a>
+          </p>
+          <p class="text-gray-300">
+            <span class="text-gray-500" data-en="GitHub:" data-bn="গিটহাব:">GitHub:</span> 
+            <a href="#" class="text-purple-400 hover:text-purple-300 ml-2">github.com/yourusername</a>
+          </p>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <footer class="max-w-5xl mx-auto p-6 text-center text-sm text-slate-500">
-    © <span id="year"></span> Md Jihadur Rahaman — All rights reserved
+  <footer class="max-w-6xl mx-auto p-8 text-center text-gray-500 border-t border-gray-800">
+    © <span id="year"></span> Md Jihadur Rahaman — <span data-en="All rights reserved" data-bn="সর্বস্বত্ব সংরক্ষিত">All rights reserved</span>
   </footer>
 
   <script>
-    // auto year
+    // Auto year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language switcher
+    const langBtn = document.getElementById('langBtn');
+    const langMenu = document.getElementById('langMenu');
+    const currentLangSpan = document.getElementById('currentLang');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    let currentLang = 'en';
+
+    langBtn.addEventListener('click', () => {
+      langMenu.classList.toggle('hidden');
+    });
+
+    langOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const selectedLang = option.dataset.lang;
+        currentLang = selectedLang;
+        currentLangSpan.textContent = option.textContent.trim().substring(3);
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-en]').forEach(el => {
+          el.textContent = el.dataset[selectedLang];
+        });
+        
+        langMenu.classList.add('hidden');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.add('hidden');
+      }
+    });
   </script>
 </body>
 </html>
