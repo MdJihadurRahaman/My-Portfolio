@@ -1,181 +1,218 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Md Jihadur Rahaman</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     html { scroll-behavior: smooth; }
-    body { font-size: 18px; }
+
+    /* Section fade animation */
+    .section-block { 
+      opacity: 0; 
+      transition: opacity 0.4s ease; 
+      display: none;
+    }
+    .section-block.active {
+      opacity: 1;
+      display: block;
+    }
   </style>
 </head>
+
 <body class="bg-black text-gray-100 min-h-screen">
-  
-  <!-- Header with Language Selector -->
-  <header class="max-w-6xl mx-auto p-8 flex items-center justify-between border-b border-gray-800">
+
+  <!-- ================= HEADER ================= -->
+  <header class="max-w-5xl mx-auto p-5 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-gray-800">
+
+    <!-- Name -->
     <div>
-      <h1 class="text-3xl font-bold text-white">Md Jihadur Rahaman</h1>
-      <p class="text-lg text-gray-400 mt-1"> Curious Learner | Knowledge Seeker | Tech Enthusiast</p>
+      <h1 class="text-2xl sm:text-3xl font-bold text-white">Md Jihadur Rahaman</h1>
+      <p class="text-sm sm:text-lg text-gray-400 mt-1">Curious Learner | Knowledge Seeker | Tech Enthusiast</p>
     </div>
-    <nav class="flex items-center gap-6">
-      <a class="text-lg text-gray-300 hover:text-white transition" href="#about">About</a>
-      <a class="text-lg text-gray-300 hover:text-white transition" href="#work">Work</a>
-      <a class="text-lg text-gray-300 hover:text-white transition" href="#contact">Contact</a>
-      
-      <!-- Language Selector -->
+
+    <!-- Menu -->
+    <nav class="flex items-center flex-wrap gap-4 text-gray-300">
+      <button class="menu-btn hover:text-white transition" data-target="aboutSection">About</button>
+      <button class="menu-btn hover:text-white transition" data-target="workSection">Work</button>
+      <button class="menu-btn hover:text-white transition" data-target="contactSection">Contact</button>
+
+      <!-- Language Switch -->
       <div class="relative">
-        <button id="langBtn" class="flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-gray-800 rounded-lg transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-          </svg>
-          <span id="currentLang">English</span>
+        <button id="langBtn" class="flex items-center gap-2 px-3 py-2 bg-gray-900 hover:bg-gray-800 rounded-lg transition text-sm sm:text-base">
+          🌐 <span id="currentLang">English</span>
         </button>
-        <div id="langMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-900 rounded-lg shadow-xl border border-gray-800 overflow-hidden z-50">
-          <button class="lang-option w-full text-left px-4 py-3 hover:bg-gray-800 transition" data-lang="en">🇺🇸 English</button>
-          <button class="lang-option w-full text-left px-4 py-3 hover:bg-gray-800 transition" data-lang="bn">🇧🇩 বাংলা</button>
+
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-40 bg-gray-900 rounded-lg shadow-xl border border-gray-800 overflow-hidden z-50">
+          <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-800" data-lang="en">🇺🇸 English</button>
+          <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-800" data-lang="bn">🇧🇩 বাংলা</button>
         </div>
       </div>
     </nav>
   </header>
 
-  <main class="max-w-6xl mx-auto px-8 py-16">
-    
-    <!-- About Section -->
-    <section id="about" class="mb-20">
-      <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl p-10 border border-gray-800">
-        <div class="md:flex md:items-center md:gap-8">
-          <img src="profile.jpg" alt="profile" class="w-36 h-36 rounded-full object-cover shadow-lg ring-4 ring-gray-700" />
+  <!-- ================= MAIN ================= -->
+  <main class="max-w-4xl mx-auto px-5 sm:px-8 py-10 sm:py-16">
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="aboutSection" class="section-block active">
+
+      <div class="bg-gray-900/60 rounded-2xl shadow-xl p-6 sm:p-10 border border-gray-800">
+
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+
+          <img src="profile.jpg"
+            class="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover shadow-lg ring-4 ring-gray-700" />
+
           <div>
-            <h2 class="text-2xl font-bold text-white mb-4" data-en="About Me" data-bn="আমার সম্পর্কে">About Me</h2>
-            <div class="text-gray-300 leading-relaxed text-lg space-y-4" data-en="I am a person who measures life through the lens of morality. I am endlessly curious, always seeking to learn something new and absorb it deeply, allowing it to shape my understanding of myself and the world around me. I am drawn to the warmth of human compassion, brotherhood, and the tenderness shared between all living beings.
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-4"
+              data-en="About Me" data-bn="আমার সম্পর্কে">About Me</h2>
 
-To me, all religions hold equal value, and I firmly believe that every faith is guided by the principles of morality. Hatred or intolerance toward others in the name of one's own religion is unacceptable. True liberation, I believe, lies in secular harmony and universal empathy.
+            <div class="text-gray-300 leading-relaxed text-base sm:text-lg space-y-4"
+              data-en="I am a person who measures life..."
+              data-bn="আমি এমন একজন মানুষ যে নৈতিকতার দৃষ্টিভঙ্গি...">
 
-I strive to live with integrity, wishing well not only for myself and my family but for all humanity. My journey is about growth, understanding, and contributing positively to the world around me." data-bn="আমি এমন একজন মানুষ যে নৈতিকতার দৃষ্টিভঙ্গি দিয়ে জীবনকে পরিমাপ করি। আমি অন্তহীন কৌতূহলী, সর্বদা নতুন কিছু শিখতে এবং গভীরভাবে তা আত্মস্থ করতে চাই, যা আমার নিজের এবং আমার চারপাশের বিশ্ব সম্পর্কে আমার বোঝাপড়াকে রূপ দেয়। আমি মানবিক করুণা, ভ্রাতৃত্ব এবং সমস্ত জীবের মধ্যে ভাগ করা কোমলতার উষ্ণতার প্রতি আকৃষ্ট।
+              <p>
+                I am a person who measures life through the lens of morality. I am endlessly curious,
+                always seeking to learn something new and absorb it deeply.
+              </p>
 
-আমি একজন মানুষ, যিনি নৈতিকতার মানদণ্ডে জীবনকে পরিমাপ করি। নতুন কিছু শেখার প্রতি আমার গভীর আগ্রহ থাকে, এবং শেখা জিনিসগুলোকে নিজের মধ্যে ধারণ করে নিজেকে আরও ভালোভাবে উপলব্ধি করতে চাই। মানুষের মধ্যে ভ্রাতৃত্ববোধ, সকল প্রাণীর প্রতি স্নেহ ও মমতা আমাকে গভীরভাবে আকৃষ্ট করে।
+              <p>
+                To me, all religions hold equal value. Hatred or intolerance toward others is unacceptable.
+                True liberation lies in secular harmony and universal empathy.
+              </p>
 
-আমার কাছে সকল ধর্ম সমানভাবে মূল্যবান। আমি বিশ্বাস করি, প্রতিটি ধর্ম নৈতিকতার ভিত্তিতে পরিচালিত হয়। কোনো ধর্মের অনুসারী হয়ে অন্য ধর্মের প্রতি ঘৃণা প্রদর্শন করা একেবারেই অনুচিত। সত্যিকারের মুক্তি, আমি মনে করি, আসে অসাম্প্রদায়িক সহমর্মিতা ও মানবিক বোঝাপড়ার মধ্য দিয়ে।
+              <p>
+                I strive to live with integrity, wishing well for all humanity. My journey is about growth,
+                understanding, and contributing positively to the world.
+              </p>
 
-আমি সর্বদা integrity বজায় রেখে জীবন যাপন করতে চাই, এবং নিজের ও পরিবারের জন্য নয়, বরং পৃথিবীর সকল মানুষের মঙ্গল কামনা করি। আমার জীবনযাত্রা হলো শেখা, বোঝা এবং পৃথিবীতে ইতিবাচক প্রভাব ফেলা।">
-              <p>I am a person who measures life through the lens of morality. I am endlessly curious, always seeking to learn something new and absorb it deeply, allowing it to shape my understanding of myself and the world around me. I am drawn to the warmth of human compassion, brotherhood, and the tenderness shared between all living beings.</p>
-              
-              <p>To me, all religions hold equal value, and I firmly believe that every faith is guided by the principles of morality. Hatred or intolerance toward others in the name of one's own religion is unacceptable. True liberation, I believe, lies in secular harmony and universal empathy.</p>
-              
-              <p>I strive to live with integrity, wishing well not only for myself and my family but for all humanity. My journey is about growth, understanding, and contributing positively to the world around me.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Work Section -->
-    <section id="Values" class="mb-20">
-      <h2 class="text-3xl font-bold text-white mb-8" data-en="" data-bn="মূল্যবোধ">The Essence of My Beliefs</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        
-        <!-- Philosophical Thoughts Card -->
-        <a href="thoughts.html" class="group block bg-gradient-to-br from-purple-900/30 to-gray-900 rounded-2xl p-8 border border-purple-800/50 hover:border-purple-600 transition-all duration-300 shadow-xl hover:shadow-purple-900/50 transform hover:-translate-y-1">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-16 h-16 bg-purple-600/20 rounded-xl flex items-center justify-center group-hover:bg-purple-600/30 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400 group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3" data-en="My Moral Compass" data-bn="সহমর্মিতার পথচলা">My Moral Compass</h3>
-          <p class="text-gray-400 text-lg leading-relaxed" data-en="A collection of my reflective essays and philosophical notes on identity, time, meaning, and the human experience." data-bn="পরিচয়, সময়, অর্থ এবং মানব অভিজ্ঞতার উপর আমার প্রতিফলিত প্রবন্ধ এবং দার্শনিক নোটের সংগ্রহ।">
-            A collection of my reflective essays and philosophical notes on identity, time, meaning, and the human experience.
+    <!-- ========== WORK SECTION ========== -->
+    <section id="workSection" class="section-block">
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-8">The Essence of My Beliefs</h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <!-- Card 01 -->
+        <a href="thoughts.html"
+          class="group bg-gradient-to-br from-purple-900/30 to-gray-900 rounded-2xl p-6 sm:p-8 border border-purple-800/40 hover:border-purple-600 transition shadow-xl hover:shadow-purple-900/50">
+
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">My Moral Compass</h3>
+          <p class="text-gray-400 text-base sm:text-lg">
+            A collection of my reflective essays and philosophical thoughts on identity, time, and the human experience.
           </p>
         </a>
 
-        <!-- Placeholder for future content -->
-        <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-gray-800 opacity-60">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-500 mb-3" data-en="More Coming Soon" data-bn="শীঘ্রই আরও আসছে">More Coming Soon</h3>
-          <p class="text-gray-600 text-lg" data-en="Stay tuned for more content and projects." data-bn="আরও বিষয়বস্তু এবং প্রকল্পের জন্য অপেক্ষা করুন।">
-            Stay tuned for more content and projects.
-          </p>
+        <!-- Card 02 -->
+        <div class="bg-gray-900/40 rounded-2xl p-6 sm:p-8 border border-gray-800 opacity-70">
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-500 mb-3">More Coming Soon</h3>
+          <p class="text-gray-500 text-base sm:text-lg">Stay tuned for upcoming projects.</p>
+
         </div>
 
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="mb-20">
-      <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-10 border border-gray-800 shadow-2xl">
-        <h2 class="text-3xl font-bold text-white mb-6" data-en="Get in Touch" data-bn="যোগাযোগ করুন">Get in Touch</h2>
-        <div class="space-y-4 text-lg">
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contactSection" class="section-block">
+
+      <div class="bg-gray-900/60 rounded-2xl shadow-xl p-6 sm:p-10 border border-gray-800">
+
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Get in Touch</h2>
+
+        <div class="text-base sm:text-lg space-y-4">
+
           <p class="text-gray-300">
-            <span class="text-gray-500" data-en="Email:" data-bn="ইমেইল:">Email:</span> 
-            <a href="mailto: jrjihad88@gmail.com" class="text-purple-400 hover:text-purple-300 ml-2">jrjihad88@gmail.com</a>
+            <span class="text-gray-500">Email:</span>
+            <a href="mailto:jrjihad88@gmail.com" class="text-purple-400 hover:text-purple-300 ml-2">
+              jrjihad88@gmail.com
+            </a>
           </p>
+
           <p class="text-gray-300">
-            <span class="text-gray-500" data-en="LinkedIn:" data-bn="লিংকডইন:">LinkedIn:</span> 
-            <a href="https://www.linkedin.com/in/mdjihadurrahaman/" class="text-purple-400 hover:text-purple-300 ml-2">Md Jihadur Rahaman</a>
+            <span class="text-gray-500">LinkedIn:</span>
+            <a href="https://www.linkedin.com/in/mdjihadurrahaman/" class="text-purple-400 hover:text-purple-300 ml-2">
+              Md Jihadur Rahaman
+            </a>
           </p>
+
           <p class="text-gray-300">
-            <span class="text-gray-500" data-en="Phone Number:" data-bn="মোবাইল নাম্বার:"> Phone Number:</span> 
-            <a href="tel: +8801570286455" class="text-purple-400 hover:text-purple-300 ml-2">Phone Number</a>
+            <span class="text-gray-500">Phone:</span>
+            <a href="tel:+8801570286455" class="text-purple-400 hover:text-purple-300 ml-2">
+              +8801570286455
+            </a>
           </p>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="max-w-6xl mx-auto p-8 text-center text-gray-500 border-t border-gray-800">
-    © <span id="year"></span> Md Jihadur Rahaman — <span data-en="All rights reserved" data-bn="সর্বস্বত্ব সংরক্ষিত">All rights reserved</span>
+  <!-- ================= FOOTER ================= -->
+  <footer class="max-w-4xl mx-auto p-6 text-center text-gray-500 border-t border-gray-800">
+    © <span id="year"></span> Md Jihadur Rahaman — All rights reserved
   </footer>
 
+  <!-- ================= SCRIPT ================= -->
   <script>
-    // Auto year
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Language switcher
+    // Auto year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Section Toggle Logic
+    const sections = document.querySelectorAll('.section-block');
+    const menuButtons = document.querySelectorAll('.menu-btn');
+
+    menuButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+
+        sections.forEach(sec => {
+          sec.id === target ? sec.classList.add('active') : sec.classList.remove('active');
+        });
+      });
+    });
+
+    // Language Switcher
     const langBtn = document.getElementById('langBtn');
     const langMenu = document.getElementById('langMenu');
     const currentLangSpan = document.getElementById('currentLang');
     const langOptions = document.querySelectorAll('.lang-option');
 
-    let currentLang = 'en';
-
-    langBtn.addEventListener('click', () => {
-      langMenu.classList.toggle('hidden');
-    });
+    langBtn.addEventListener('click', () => langMenu.classList.toggle('hidden'));
 
     langOptions.forEach(option => {
       option.addEventListener('click', () => {
-        const selectedLang = option.dataset.lang;
-        currentLang = selectedLang;
+        const lang = option.dataset.lang;
         currentLangSpan.textContent = option.textContent.trim().substring(3);
-        
-        // Update all translatable elements
+
         document.querySelectorAll('[data-en]').forEach(el => {
-          el.textContent = el.dataset[selectedLang];
+          el.textContent = el.dataset[lang];
         });
-        
+
         langMenu.classList.add('hidden');
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
         langMenu.classList.add('hidden');
       }
     });
+
   </script>
+
 </body>
 </html>
